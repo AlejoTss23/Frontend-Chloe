@@ -1,0 +1,19 @@
+<app-header></app-header>
+<body class="bg-[url('https://images.unsplash.com/photo-1631067128698-2f4f8ce87e28?q=80&w=1858&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover bg-no-repeat h-[100vh] w-screen relative flex items-center">
+    <div class="w-screen h-[100vh] bg-black opacity-50 absolute top-0 left-0"></div>
+    <div class=" relative text-white text-center flex flex-col gap-4 mx-auto border-2 rounded-md px-4 w-[30%] py-6 shadow-xl shadow-[#274952]">
+        <h1 class="text-2xl uppercase font-semibold">Administracion</h1>
+        <form (ngSubmit)="onSubmit()">
+        <div class="flex flex-col gap-2 w-[70%] mx-auto">
+                    <label for="username" class="text-xl font-semibold text-left">Usuario</label>
+                    <input  class="outline-none px-4 py-2 rounded-full bg-transparent border-2 text-white" type="text" id="username" [(ngModel)]="username" name="username" placeholder="Username" required />
+                </div>
+                    <div  class="flex flex-col gap-2 w-[70%] mx-auto">
+                        <label  class="text-xl font-semibold text-left"  for="username">Contraseña</label>
+                        <input class="outline-none px-4 py-2 rounded-full bg-transparent border-2 text-white" type="password" id="password" [(ngModel)]="password" name="password" placeholder="Password" required />
+                    </div>
+                <div *ngIf="errorMessage" class="alert alert-danger text-center mb-4">{{ errorMessage }}</div>
+                <button type="submit" class="bg-[#274952] px-4 py-2 rounded-md text-xl w-[200px] mx-auto  mt-4 hover:bg-transparent hover:border-[#274952] border-2 border-[#274952]">Ingresar</button>
+            </form>
+        </div>
+</body>
